@@ -1,0 +1,29 @@
+/* Table Styling */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid rgba(36,36,65,0.2);
+  text-align: left;
+  padding: 8px;
+}
+
+tr {
+  cursor: pointer;
+  transition: all 100ms;
+}
+
+tr:nth-child(even):hover,
+tr:nth-child(odd):hover  {
+  background-color: rgba(36,36,65,0.1);
+}
+
+/* Modal Styling */
+.modalCustom {
+  background-color: rgba(255, 255, 255, 1);
+  max-height: 800px;
+  overflow: auto;
+}

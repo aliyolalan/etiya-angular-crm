@@ -1,0 +1,78 @@
+<div class="flex h-full w-full flex-col items-center justify-center px-8 py-8">
+  <div class="flex h-full w-full flex-row rounded-md bg-white-1000">
+    <!-- Searching Product Section -->
+    <div class="w-1/5 bg-etiyaNavyColor-200 p-8">
+      <div class="mb-3 flex w-full flex-col">
+        <label class="mb-1 font-semibold" for="">ID</label>
+        <input
+          [(ngModel)]="searchedID"
+          (keyup)="searchFunctionWithID()"
+          class="rounded-none border-2 bg-white-800 px-3 py-2 outline-none"
+          type="search"
+          placeholder="Search with ID..."
+        />
+      </div>
+      <div class="mb-3 flex w-full flex-col">
+        <label class="mb-1 font-semibold" for="">Title</label>
+        <input
+          [(ngModel)]="searchedString"
+          (keyup)="searchFunctionWithTitle()"
+          class="rounded-none border-2 bg-white-800 px-3 py-2 outline-none"
+          type="search"
+          placeholder="Search with title..."
+        />
+      </div>
+      <div class="mb-3 flex w-full flex-col">
+        <label class="mb-1 font-semibold" for="">Price</label>
+        <input
+          class="rounded-none border-2 bg-white-800 px-3 py-2 outline-none"
+          type="text"
+        />
+      </div>
+    </div>
+
+    <!-- Rendering Product Section -->
+    <div class="w-full bg-etiyaOrangeColor-200 p-8">
+      <table>
+        <tr>
+          <th class="w-1/12">#</th>
+          <th class="w-1/12">ID</th>
+          <th class="w-7/12">Title</th>
+          <th class="w-2/12">Price</th>
+          <th class="w-2/12">Image</th>
+        </tr>
+        <tr
+          (click)="
+            openDetailModal(i); ngxSmartModalService.getModal('myModal').open()
+          "
+          *ngFor="let productItem of arrayOfProductInfo; let i = index"
+        >
+          <td>{{ i + 1 }}</td>
+          <td>{{ productItem.productId }}</td>
+          <td>{{ productItem.productName }}</td>
+          <td>{{ productItem.price }}</td>
+          <td>
+            <img
+              class="h-12 w-auto"
+              src="{{ productItem.images![0].thumb }}"
+              alt=""
+            />
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Product Detail Modal -->
+<ngx-smart-modal
+  class="modalCustom absolute left-1/2 top-1/2 w-4/12 -translate-x-1/2 -translate-y-1/2 transform"
+  #myModal
+  identifier="myModal"
+>
+  <h1 class="text-3xl">{{ productItem?.productName }}</h1>
+  <img src="{{ productItem.images && productItem.images[0].normal }}" alt="" />
+  <p>{{ productItem.description }}</p>
+
+  <button (click)="myModal.close()"></button>
+</ngx-smart-modal>
