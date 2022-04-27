@@ -39,6 +39,9 @@ module.exports = {
         200: "rgba(255,255,255,0.2)",
         100: "rgba(255,255,255,0.1)",
       },
+      red: {
+        deleteColor: "rgba(220, 38, 38, 1)",
+      },
     },
   },
   plugins: [],

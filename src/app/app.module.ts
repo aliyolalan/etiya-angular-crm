@@ -16,6 +16,10 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { ContentComponent } from './content/content.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddressComponent } from './address/address.component';
+import { LayoutComponent } from './layout/layout.component';
+import { ProfileComponent } from './profile/profile.component';
+import { OrdersComponent } from './orders/orders.component';
+import { CustomersComponent } from './customers/customers.component';
 
 
 @NgModule({
@@ -27,6 +31,10 @@ import { AddressComponent } from './address/address.component';
     ContentComponent,
     DashboardComponent,
     AddressComponent,
+    LayoutComponent,
+    ProfileComponent,
+    OrdersComponent,
+    CustomersComponent,
   ],
   imports: [
     BrowserModule,

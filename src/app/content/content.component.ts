@@ -12,6 +12,8 @@ export class ContentComponent implements OnInit {
 
   searchedString = ""
   searchedID = ""
+  maxValue = ""
+  minValue = ""
   arrayOfProductInfo:ProBilgiler[] = []
   oldArrayOfProductInfo:ProBilgiler[] = []
   productItem:ProBilgiler = {}
@@ -31,8 +33,6 @@ export class ContentComponent implements OnInit {
         console.error(err.message)
       }
     })
-
-    console.log("Deneme: ", this.productItem)
   }
 
   searchFunctionWithTitle() {
@@ -49,6 +49,12 @@ export class ContentComponent implements OnInit {
 
     const filterGlobal = (productItem: ProBilgiler) => productItem.productId?.includes(searchingID)
     this.arrayOfProductInfo = this.arrayOfProductInfo.filter(filterGlobal)
+  }
+
+  rangeFilterFunction() {
+    this.arrayOfProductInfo = this.oldArrayOfProductInfo
+    const maxedValue = parseInt(this.maxValue)
+    console.log(maxedValue)
   }
 
   openDetailModal(i: number) {

@@ -1,12 +1,1 @@
-.parent {
-  display: grid;
-  grid-template-columns: repeat(24, 1fr);
-  grid-template-rows: repeat(12, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  height: 100vh;
-}
 
-.div1 { grid-area: 1 / 1 / 2 / 25; }
-.div2 { grid-area: 2 / 1 / 13 / 4; }
-.div3 { grid-area: 2 / 4 / 13 / 25; }
