@@ -20,6 +20,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { ProfileComponent } from './profile/profile.component';
 import { OrdersComponent } from './orders/orders.component';
 import { CustomersComponent } from './customers/customers.component';
+import { ProductComponent } from './content/product/product.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { CustomersComponent } from './customers/customers.component';
     ProfileComponent,
     OrdersComponent,
     CustomersComponent,
+    ProductComponent,
   ],
   imports: [
     BrowserModule,

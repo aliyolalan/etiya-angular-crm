@@ -48,7 +48,7 @@
           class="text-etiyaOrangeColor-1000"
           *ngIf="password?.invalid && password?.touched"
         >
-          Lütfen bir şifre giriniz!
+          Lütfen şifrenizi giriniz!
         </div>
       </div>
       <div class="flex items-center justify-between">
@@ -57,6 +57,7 @@
             class="mr-2 h-4 w-4 cursor-pointer rounded-none border-none"
             type="checkbox"
             id="rememberMe"
+            formControlName="rememberStatus"
           />
           <label for="rememberMe" class="text-md cursor-pointer text-white-900"
             >Beni Hatırla</label

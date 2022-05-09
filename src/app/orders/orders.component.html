@@ -1,1 +1,29 @@
-<p>orders works!</p>
+<div class="flex h-full w-full flex-col items-center justify-center px-8 py-8">
+  <div class="flex h-full w-full flex-row rounded-md bg-white-1000">
+    <!-- Rendering Product Section -->
+    <div class="w-full bg-etiyaOrangeColor-200 p-8">
+      <table>
+        <tr>
+          <th class="w-1/12">#</th>
+          <th class="w-2/12">ID</th>
+          <th class="w-2/12">Customer ID</th>
+          <th class="w-2/12">Product ID</th>
+          <th class="w-2/12">Product Name</th>
+          <th class="w-2/12">Price</th>
+          <th class="w-1/12">Image</th>
+        </tr>
+        <tr *ngFor="let item of cartList; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ item.id }}</td>
+          <td>{{ item.must_id }}</td>
+          <td>{{ item.urun_id! }}</td>
+          <td>{{ item.urun_adi }}</td>
+          <td>{{ item.fiyat }}</td>
+          <td>
+            <img class="h-12 w-auto" src="{{ item.thumb! }}" alt="" />
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

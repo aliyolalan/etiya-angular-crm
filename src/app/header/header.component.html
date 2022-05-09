@@ -12,8 +12,12 @@
         />
       </li>
       <li class="flex items-center">
-        <fa-icon class="mr-3 text-2xl" [icon]="faUser"></fa-icon>
-        <a class="font-semibold" routerLink="/profile"> Ali Yolalan</a>
+        <a class="flex items-center" routerLink="/profile">
+          <fa-icon class="mr-2 text-2xl" [icon]="faUser"></fa-icon>
+          <span class="font-semibold" routerLink="/profile">
+            {{ user.userName }} {{ user.userSurname }}
+          </span>
+        </a>
       </li>
     </ul>
   </nav>

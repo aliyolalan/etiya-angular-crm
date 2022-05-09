@@ -13,7 +13,7 @@
           class="flex items-center justify-start px-4 py-4 pl-8 text-lg text-white-800 transition-all hover:bg-white-100"
           routerLink="/address"
           ><fa-icon class="mr-3" [icon]="faAddressCard"></fa-icon> Adres
-          Düzenleme</a
+          Listesi</a
         >
       </li>
 
@@ -22,7 +22,7 @@
           class="flex items-center justify-start px-4 py-4 pl-8 text-lg text-white-800 transition-all hover:bg-white-100"
           routerLink="/orders"
           ><fa-icon class="mr-3" [icon]="faShoppingCart"></fa-icon>
-          Siparişler</a
+          Siparişlerim</a
         >
       </li>
 
@@ -30,7 +30,7 @@
         <a
           class="flex items-center justify-start px-4 py-4 pl-8 text-lg text-white-800 transition-all hover:bg-white-100"
           routerLink="/customers"
-          ><fa-icon class="mr-3" [icon]="faUsers"></fa-icon> Müşteriler</a
+          ><fa-icon class="mr-3" [icon]="faUsers"></fa-icon> Müşteri Listesi</a
         >
       </li>
 
@@ -44,8 +44,8 @@
 
       <li class="mt-auto flex flex-col">
         <a
-          class="flex items-center justify-start px-4 py-4 pl-8 text-lg text-white-800 transition-all hover:bg-white-100"
-          routerLink="/dashboard"
+          (click)="logOutFunction()"
+          class="flex cursor-pointer items-center justify-start px-4 py-4 pl-8 text-lg text-white-800 transition-all hover:bg-white-100"
           ><fa-icon class="mr-3" [icon]="faSignOut"></fa-icon> Oturumu Kapat</a
         >
       </li>

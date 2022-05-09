@@ -3,59 +3,58 @@ export interface IProduct {
 }
 
 export interface Product {
-  durum:    boolean;
-  mesaj:    string;
-  total:    string;
+  durum: boolean;
+  mesaj: string;
+  total: string;
   bilgiler?: ProBilgiler[];
 }
 
 export interface ProBilgiler {
-  productId?:           string;
-  productName?:         string;
-  brief?:               string;
-  description?:         string;
-  price?:               string;
-  saleInformation?:     SaleInformation;
-  campaign?:            Campaign;
-  campaignTitle?:       string;
+  productId?: string;
+  productName?: string;
+  brief?: string;
+  description?: string;
+  price?: string;
+  saleInformation?: SaleInformation;
+  campaign?: Campaign;
+  campaignTitle?: string;
   campaignDescription?: string;
-  categories?:          Category[];
-  image?:               boolean;
-  images?:              Image[];
-  likes?:               Likes;
+  categories?: Category[];
+  image?: boolean;
+  images?: Image[];
+  likes?: Likes;
 }
 
 export interface Campaign {
   campaignTypeId?: string;
-  campaignType?:   string;
+  campaignType?: string;
 }
 
 export interface Category {
-  categoryId?:   string;
+  categoryId?: string;
   categoryName?: string;
 }
 
 export interface Image {
   normal?: string;
-  thumb?:  string;
+  thumb?: string;
 }
 
 export interface Likes {
-  like?:    Like;
+  like?: Like;
   dislike?: number;
 }
 
 export interface Like {
   oy_toplam?: string;
-  ortalama?:  string;
+  ortalama?: string;
 }
 
 export interface SaleInformation {
   saleTypeId?: string;
-  saleType?:   SaleType;
+  saleType?: SaleType;
 }
 
 export enum SaleType {
-  Satılık = "Satılık",
+  Satılık = 'Satılık',
 }
-

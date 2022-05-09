@@ -1,1 +1,56 @@
-<p>profile works!</p>
+<div class="flex h-full w-full flex-col items-center justify-center px-8 py-8">
+  <div class="flex h-full w-full flex-row rounded-md bg-white-1000">
+    <!-- Update Profile  Section -->
+    <div class="w-full bg-etiyaNavyColor-200 p-8">
+      <div class="mb-3 flex w-full flex-col">
+        <label class="mb-1 font-semibold" for="">İsim</label>
+        <input
+          [(ngModel)]="user.userName"
+          class="rounded-none border-2 bg-white-800 px-3 py-2 outline-none"
+          type="text"
+        />
+      </div>
+      <div class="mb-3 flex w-full flex-col">
+        <label class="mb-1 font-semibold" for="">Soyisim</label>
+        <input
+          [(ngModel)]="user.userSurname"
+          class="rounded-none border-2 bg-white-800 px-3 py-2 outline-none"
+          type="text"
+        />
+      </div>
+      <div class="mb-3 flex w-full flex-col">
+        <label class="mb-1 font-semibold" for="">Email</label>
+        <input
+          [(ngModel)]="user.userEmail"
+          class="rounded-none border-2 bg-white-800 px-3 py-2 outline-none"
+          type="email"
+        />
+      </div>
+      <div class="mb-3 flex w-full flex-col">
+        <label class="mb-1 font-semibold" for="">Telefon</label>
+        <input
+          [(ngModel)]="user.userPhone"
+          class="rounded-none border-2 bg-white-800 px-3 py-2 outline-none"
+          type="text"
+        />
+      </div>
+      <div class="mb-6 flex w-full flex-col">
+        <label class="mb-1 font-semibold" for="">Şifre</label>
+        <input
+          [(ngModel)]="password"
+          class="rounded-none border-2 bg-white-800 px-3 py-2 outline-none"
+          type="password"
+        />
+      </div>
+      <div class="mb-3 flex w-full flex-col">
+        <button
+          (click)="updateFunction()"
+          class="ml-auto w-1/12 rounded-none border-2 bg-white-800 px-3 py-2 outline-none"
+          type="submit"
+        >
+          Kaydet
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -11,23 +11,26 @@ import { ProfileComponent } from './profile/profile.component';
 import { OrdersComponent } from './orders/orders.component';
 import { CustomersComponent } from './customers/customers.component';
 
-
-
 const routes: Routes = [
-  { path: "", component: LayoutComponent, children: [
-  { path: 'header', component: HeaderComponent},
-  { path: "dashboard", component: DashboardComponent},
-  { path: "address", component: AddressComponent},
-  { path: "profile", component: ProfileComponent},
-  { path: "orders", component: OrdersComponent},
-  { path: "customers", component: CustomersComponent},
-  { path: "content", component: ContentComponent}]},
+  {
+    path: '',
+    component: LayoutComponent,
+    children: [
+      { path: 'header', component: HeaderComponent },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'address', component: AddressComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'orders', component: OrdersComponent },
+      { path: 'customers', component: CustomersComponent },
+      { path: 'content', component: ContentComponent },
+    ],
+  },
   { path: 'login', component: LoginComponent },
-]
+];
 
 @NgModule({
   declarations: [],
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
