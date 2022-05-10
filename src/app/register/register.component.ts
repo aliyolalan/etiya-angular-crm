@@ -8,7 +8,9 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { IUser } from '../models/iuser';
 import { faSignIn, faRegistered } from '@fortawesome/free-solid-svg-icons';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-register',
@@ -77,5 +79,47 @@ export class RegisterComponent implements OnInit {
     return this.userForm.get('userPassword');
   }
 
-  registerFunction() {}
+  // Register Function
+  registerFunction() {
+    const userName = this.userName?.value;
+    const userSurname = this.userSurname?.value;
+    const userPhone = this.userPhone?.value;
+    const userEmail = this.userEmail?.value;
+    const userPassword = this.userPassword?.value;
+
+    const URL = 'https://www.jsonbulut.com/json/userRegister.php';
+    const sendParams = {
+      ref: environment.referanceNumber,
+      userName: userName,
+      userSurname: userSurname,
+      userPhone: userPhone,
+      userEmail: userEmail,
+      userPassword: userPassword,
+    };
+
+    // Sending Personal Information To Backend
+    const newThis = this;
+    this.httpService.get<IUser>(URL, { params: sendParams }).subscribe({
+      next(res) {
+        const user = res.user[0];
+        const resStatus = user.durum;
+        const resMessage = user.mesaj;
+
+        // This Codes Work If Successful
+        if (resStatus === true) {
+          newThis.toastrService.success(resMessage, 'Başarılı');
+
+          // Redirect to Login Page After Registration
+          setTimeout(() => {
+            newThis.routerService.navigate(['/login']);
+          }, 2000);
+        } else {
+          newThis.toastrService.clear();
+          newThis.toastrService.error(resMessage, 'Hata', {
+            timeOut: 2000,
+          });
+        }
+      },
+    });
+  }
 }
