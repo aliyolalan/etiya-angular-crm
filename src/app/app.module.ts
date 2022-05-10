@@ -3,10 +3,10 @@ import { NgxSmartModalModule } from 'ngx-smart-modal';
 import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from "@angular/common/http"
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-
+import { ModalDialogModule } from 'ngx-modal-dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,7 +24,6 @@ import { ProductComponent } from './content/product/product.component';
 import { RegisterComponent } from './register/register.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
-
 
 @NgModule({
   declarations: [
@@ -53,9 +52,10 @@ import { HomeComponent } from './home/home.component';
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    NgxSmartModalModule.forRoot()
+    NgxSmartModalModule.forRoot(),
+    ModalDialogModule.forRoot(),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

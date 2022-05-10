@@ -1,4 +1,4 @@
-<div class="container m-auto">
+<div class="container-2xl m-auto">
   <header class="h-20">
     <nav class="h-full bg-etiyaNavyColor-1000 px-5">
       <ul class="flex h-full flex-row">
@@ -7,10 +7,24 @@
         </li>
         <li class="flex items-center justify-center">
           <a
-            class="text-md mb-0 mr-3 cursor-pointer border-b-2 uppercase text-etiyaOrangeColor-1000"
+            routerLink="/login"
+            class="mb-2 mr-3 cursor-pointer border-b-2 text-lg uppercase text-etiyaOrangeColor-1000"
+            >Giriş Yap
+          </a>
+          <a
+            routerLink="/register"
+            class="mb-2 mr-3 cursor-pointer border-b-2 text-lg uppercase text-etiyaOrangeColor-1000"
+            >Kayıt Ol
+          </a>
+          <a
+            class="mb-2 mr-3 cursor-pointer border-b-2 text-lg uppercase text-etiyaOrangeColor-1000"
             >Menu
           </a>
-          <span class="hamburger-menu"></span>
+          <div class="hamburger-lines cursor-pointer">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+          </div>
         </li>
       </ul>
     </nav>

@@ -1,10 +1,12 @@
 <div class="container-2xl m-auto h-screen bg-etiyaNavyColor-1000">
   <div class="flex h-full flex-col items-center justify-center text-center">
-    <p class="mb-3 text-9xl font-extrabold text-etiyaOrangeColor-1000">404</p>
-    <p class="mb-6 text-6xl text-etiyaOrangeColor-1000">Sayfa Bulunamadı.</p>
+    <div class="mb-3 flex flex-row items-center justify-center">
+      <p class="mr-6 text-9xl font-extrabold text-etiyaOrangeColor-1000">404</p>
+      <p class="text-6xl text-etiyaOrangeColor-1000">Sayfa Bulunamadı.</p>
+    </div>
     <p class="mb-6 w-1/3 text-xl text-white-800">
-      The page you were looking for doesn't exist. You may have mistyped the
-      address or the page may have moved.
+      Aradığınız sayfa mevcut değil. Adresi yanlış yazmış olabilirsiniz veya
+      sayfa taşınmış olabilir.
     </p>
     <a
       (click)="backToLastPage()"

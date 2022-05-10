@@ -1,23 +1,24 @@
-.hamburger-menu {
+.line {
   display: flex;
-  flex-direction: row;
   width: 30px;
   height: 3px;
   background-color: white;
+  border-radius: 5px;
 }
 
-.hamburger-menu::before {
-  content: "";
-  width: 30px;
+.line1 {
+  width: 15px;
   height: 3px;
-  padding-bottom: 3px;
-  background-color: white;
+  margin-bottom: 6px;
+  background-color: rgba(247, 130, 0, 1);
 }
 
-.hamburger-menu::after {
-  content: "";
+.line2 {
+  background-color: rgba(247, 130, 0, 1);
+}
+
+.line3 {
   width: 30px;
   height: 3px;
-  padding-top: 3px;
-  background-color: white;
+  margin-top: 6px;
 }

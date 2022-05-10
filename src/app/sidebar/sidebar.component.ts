@@ -37,6 +37,4 @@ export class SidebarComponent implements OnInit {
       this.routerService.navigate(['/login']);
     }
   }
-
-  openDialogModal() {}
 }
