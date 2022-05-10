@@ -22,6 +22,8 @@ import { OrdersComponent } from './orders/orders.component';
 import { CustomersComponent } from './customers/customers.component';
 import { ProductComponent } from './content/product/product.component';
 import { RegisterComponent } from './register/register.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -39,6 +41,8 @@ import { RegisterComponent } from './register/register.component';
     CustomersComponent,
     ProductComponent,
     RegisterComponent,
+    NotFoundComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

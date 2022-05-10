@@ -1,0 +1,23 @@
+.hamburger-menu {
+  display: flex;
+  flex-direction: row;
+  width: 30px;
+  height: 3px;
+  background-color: white;
+}
+
+.hamburger-menu::before {
+  content: "";
+  width: 30px;
+  height: 3px;
+  padding-bottom: 3px;
+  background-color: white;
+}
+
+.hamburger-menu::after {
+  content: "";
+  width: 30px;
+  height: 3px;
+  padding-top: 3px;
+  background-color: white;
+}

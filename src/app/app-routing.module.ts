@@ -11,6 +11,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { OrdersComponent } from './orders/orders.component';
 import { CustomersComponent } from './customers/customers.component';
 import { RegisterComponent } from './register/register.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
@@ -26,8 +28,11 @@ const routes: Routes = [
       { path: 'content', component: ContentComponent },
     ],
   },
+  { path: "home", component: HomeComponent},
   { path: 'login', component: LoginComponent },
-  { path: "register", component: RegisterComponent}
+  { path: "register", component: RegisterComponent},
+  { path: "**", component: NotFoundComponent},
+
 ];
 
 @NgModule({
