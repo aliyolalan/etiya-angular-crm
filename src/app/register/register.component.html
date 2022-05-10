@@ -9,70 +9,102 @@
   <div
     class="flex w-3/5 flex-col items-center justify-center bg-etiyaNavyColor-1000"
   >
-    <form class="w-2/4" method="post">
+    <form
+      [formGroup]="userForm"
+      (ngSubmit)="registerFunction()"
+      class="w-2/4"
+      method="post"
+    >
       <div class="mb-3 inline-block">
         <p class="mb-2 text-3xl text-white-900">Kayıt Olun</p>
         <div class="h-1 w-full bg-etiyaOrangeColor-1000"></div>
       </div>
+      <!-- User Name Section -->
       <div class="mb-3 flex flex-col">
         <label class="text-md mb-2 text-white-900" for="">İsim</label>
         <input
-          formControlName="email"
+          formControlName="userName"
           class="mb-1 w-full rounded-none border-none border-etiyaNavyColor-400 bg-white-800 px-4 py-3 text-sm"
-          type="email"
-          id="email"
-          name="email"
+          type="text"
+          id="name"
+          name="name"
         />
-        <div class="text-etiyaOrangeColor-1000">Lütfen bir isim giriniz!</div>
+        <div
+          *ngIf="userName?.invalid && userName?.touched"
+          class="text-etiyaOrangeColor-1000"
+        >
+          Lütfen bir isim giriniz!
+        </div>
       </div>
+      <!-- User Surname Section -->
       <div class="mb-3 flex flex-col">
         <label class="text-md mb-2 text-white-900" for="">Soyisim</label>
         <input
-          formControlName="email"
+          formControlName="userSurname"
           class="mb-1 w-full rounded-none border-none border-etiyaNavyColor-400 bg-white-800 px-4 py-3 text-sm"
-          type="email"
-          id="email"
-          name="email"
+          type="text"
+          id="surname"
+          name="surname"
         />
-        <div class="text-etiyaOrangeColor-1000">
+        <div
+          *ngIf="userSurname?.invalid && userSurname?.touched"
+          class="text-etiyaOrangeColor-1000"
+        >
           Lütfen bir soyisim giriniz!
         </div>
       </div>
+      <!-- User Phone Section -->
       <div class="mb-3 flex flex-col">
         <label class="text-md mb-2 text-white-900" for="">Telefon</label>
         <input
-          formControlName="email"
+          formControlName="userPhone"
           class="mb-1 w-full rounded-none border-none border-etiyaNavyColor-400 bg-white-800 px-4 py-3 text-sm"
-          type="email"
-          id="email"
-          name="email"
+          type="text"
+          id="phone"
+          name="phone"
         />
-        <div class="text-etiyaOrangeColor-1000">
+        <div
+          *ngIf="userPhone?.invalid && userPhone?.touched"
+          class="text-etiyaOrangeColor-1000"
+        >
           Lütfen bir telefon numarası giriniz!
         </div>
       </div>
+      <!-- User Email Section -->
       <div class="mb-3 flex flex-col">
         <label class="text-md mb-2 text-white-900" for="">Email</label>
         <input
-          formControlName="email"
+          formControlName="userEmail"
           class="mb-1 w-full rounded-none border-none border-etiyaNavyColor-400 bg-white-800 px-4 py-3 text-sm"
           type="email"
           id="email"
           name="email"
         />
-        <div class="text-etiyaOrangeColor-1000">Lütfen bir email giriniz!</div>
+        <div
+          *ngIf="userEmail?.invalid && userEmail?.touched"
+          class="text-etiyaOrangeColor-1000"
+        >
+          Lütfen bir email giriniz!
+        </div>
       </div>
+      <!-- User Password Section -->
       <div class="mb-6 flex flex-col">
         <label class="text-md mb-2 text-white-900" for="">Parola</label>
         <input
-          formControlName="password"
+          formControlName="userPassword"
           class="mb-1 w-full rounded-none border-none border-etiyaNavyColor-400 bg-white-800 px-4 py-3 text-sm"
           type="password"
           id="password"
           name="password"
         />
-        <div class="text-etiyaOrangeColor-1000">Lütfen şifrenizi giriniz!</div>
+        <div
+          *ngIf="userPassword?.invalid && userPassword?.touched"
+          class="text-etiyaOrangeColor-1000"
+        >
+          Lütfen şifrenizi giriniz!
+        </div>
       </div>
+      <!-- User Register Button -->
       <div class="flex items-center justify-between">
         <div class="flex items-center justify-center"></div>
         <div>
@@ -81,7 +113,7 @@
             class="w-32 rounded-none bg-etiyaOrangeColor-1000 px-4 py-3 font-semibold text-white-900 transition-all hover:bg-etiyaOrangeColor-900"
           >
             <span class="mr-2">Kayıt Ol</span>
-            <fa-icon [icon]="faSignIn"></fa-icon>
+            <fa-icon [icon]="faRegistered"></fa-icon>
           </button>
         </div>
       </div>
