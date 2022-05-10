@@ -14,6 +14,7 @@ import { rememberControl } from '../utils/remember-control';
 // FontAwesome Icons...
 import { faSignIn } from '@fortawesome/free-solid-svg-icons';
 import { IUser } from '../models/iuser';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -71,7 +72,7 @@ export class LoginComponent implements OnInit {
 
     const url = 'https://www.jsonbulut.com/json/userLogin.php';
     const sendParams = {
-      ref: '74430d47fa16b4c53c0fe59510752c70',
+      ref: environment.referanceNumber,
       userEmail: email,
       userPass: password,
       face: 'no',

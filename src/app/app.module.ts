@@ -21,6 +21,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { OrdersComponent } from './orders/orders.component';
 import { CustomersComponent } from './customers/customers.component';
 import { ProductComponent } from './content/product/product.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { ProductComponent } from './content/product/product.component';
     OrdersComponent,
     CustomersComponent,
     ProductComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

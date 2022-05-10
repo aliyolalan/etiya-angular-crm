@@ -10,6 +10,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { ProfileComponent } from './profile/profile.component';
 import { OrdersComponent } from './orders/orders.component';
 import { CustomersComponent } from './customers/customers.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const routes: Routes = [
     ],
   },
   { path: 'login', component: LoginComponent },
+  { path: "register", component: RegisterComponent}
 ];
 
 @NgModule({

@@ -1,0 +1,90 @@
+<div class="container-2xl flex h-screen flex-row">
+  <div class="flex w-2/5 items-center justify-center">
+    <img
+      class="flex w-4/5 items-center"
+      src="../../assets/etiya-logo.png"
+      alt=""
+    />
+  </div>
+  <div
+    class="flex w-3/5 flex-col items-center justify-center bg-etiyaNavyColor-1000"
+  >
+    <form class="w-2/4" method="post">
+      <div class="mb-3 inline-block">
+        <p class="mb-2 text-3xl text-white-900">Kayıt Olun</p>
+        <div class="h-1 w-full bg-etiyaOrangeColor-1000"></div>
+      </div>
+      <div class="mb-3 flex flex-col">
+        <label class="text-md mb-2 text-white-900" for="">İsim</label>
+        <input
+          formControlName="email"
+          class="mb-1 w-full rounded-none border-none border-etiyaNavyColor-400 bg-white-800 px-4 py-3 text-sm"
+          type="email"
+          id="email"
+          name="email"
+        />
+        <div class="text-etiyaOrangeColor-1000">Lütfen bir isim giriniz!</div>
+      </div>
+      <div class="mb-3 flex flex-col">
+        <label class="text-md mb-2 text-white-900" for="">Soyisim</label>
+        <input
+          formControlName="email"
+          class="mb-1 w-full rounded-none border-none border-etiyaNavyColor-400 bg-white-800 px-4 py-3 text-sm"
+          type="email"
+          id="email"
+          name="email"
+        />
+        <div class="text-etiyaOrangeColor-1000">
+          Lütfen bir soyisim giriniz!
+        </div>
+      </div>
+      <div class="mb-3 flex flex-col">
+        <label class="text-md mb-2 text-white-900" for="">Telefon</label>
+        <input
+          formControlName="email"
+          class="mb-1 w-full rounded-none border-none border-etiyaNavyColor-400 bg-white-800 px-4 py-3 text-sm"
+          type="email"
+          id="email"
+          name="email"
+        />
+        <div class="text-etiyaOrangeColor-1000">
+          Lütfen bir telefon numarası giriniz!
+        </div>
+      </div>
+      <div class="mb-3 flex flex-col">
+        <label class="text-md mb-2 text-white-900" for="">Email</label>
+        <input
+          formControlName="email"
+          class="mb-1 w-full rounded-none border-none border-etiyaNavyColor-400 bg-white-800 px-4 py-3 text-sm"
+          type="email"
+          id="email"
+          name="email"
+        />
+        <div class="text-etiyaOrangeColor-1000">Lütfen bir email giriniz!</div>
+      </div>
+      <div class="mb-6 flex flex-col">
+        <label class="text-md mb-2 text-white-900" for="">Parola</label>
+        <input
+          formControlName="password"
+          class="mb-1 w-full rounded-none border-none border-etiyaNavyColor-400 bg-white-800 px-4 py-3 text-sm"
+          type="password"
+          id="password"
+          name="password"
+        />
+        <div class="text-etiyaOrangeColor-1000">Lütfen şifrenizi giriniz!</div>
+      </div>
+      <div class="flex items-center justify-between">
+        <div class="flex items-center justify-center"></div>
+        <div>
+          <button
+            type="submit"
+            class="w-32 rounded-none bg-etiyaOrangeColor-1000 px-4 py-3 font-semibold text-white-900 transition-all hover:bg-etiyaOrangeColor-900"
+          >
+            <span class="mr-2">Kayıt Ol</span>
+            <fa-icon [icon]="faSignIn"></fa-icon>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
