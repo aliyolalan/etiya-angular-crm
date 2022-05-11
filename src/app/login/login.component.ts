@@ -15,6 +15,7 @@ import { rememberControl } from '../utils/remember-control';
 import { faSignIn } from '@fortawesome/free-solid-svg-icons';
 import { IUser } from '../models/iuser';
 import { environment } from 'src/environments/environment';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-login',
@@ -28,7 +29,8 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private routerService: Router,
     private httpService: HttpClient,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private seoService: SeoService
   ) {
     const status = rememberControl();
     if (status === true) {
@@ -44,6 +46,8 @@ export class LoginComponent implements OnInit {
 
   // Lifecycle Method...
   ngOnInit(): void {
+    this.seoService.updateTitle('Etiya | Giriş Yap');
+
     this.userForm = new FormGroup({
       email: new FormControl(this.userForm.value.email, [
         Validators.required,

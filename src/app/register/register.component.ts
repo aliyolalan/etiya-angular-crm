@@ -11,6 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 import { IUser } from '../models/iuser';
 import { faSignIn, faRegistered } from '@fortawesome/free-solid-svg-icons';
 import { environment } from 'src/environments/environment';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-register',
@@ -25,7 +26,8 @@ export class RegisterComponent implements OnInit {
     private formBuilder: FormBuilder,
     private routerService: Router,
     private httpService: HttpClient,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private seoService: SeoService
   ) {}
 
   userForm = this.formBuilder.group({
@@ -38,6 +40,8 @@ export class RegisterComponent implements OnInit {
 
   // Validators in LifeCycle Method...
   ngOnInit(): void {
+    this.seoService.updateTitle('Etiya | Kayıt Ol');
+
     this.userForm = new FormGroup({
       userName: new FormControl(this.userForm.value.userName, [
         Validators.required,
