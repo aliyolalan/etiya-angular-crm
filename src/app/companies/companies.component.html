@@ -1,0 +1,29 @@
+<div class="flex h-full w-full flex-col items-center justify-center px-8 py-8">
+  <div class="flex h-full w-full flex-row rounded-md bg-white-1000">
+    <!-- Company List Section -->
+    <div class="w-full bg-etiyaOrangeColor-200 p-8">
+      <table>
+        <tr>
+          <th class="w-1/12">#</th>
+          <th class="w-2/12">Şirket Adı</th>
+          <th class="w-2/12">Şirket Adresi</th>
+          <th class="w-2/12">Şirket Telefonu</th>
+          <th class="w-2/12">Şirket Logosu</th>
+          <th class="w-1/12">Enlem</th>
+          <th class="w-1/12">Boylam</th>
+          <th class="w-1/12">Sektör</th>
+        </tr>
+        <tr *ngFor="let item of arrayOfCompanyInfo; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ item.companyName }}</td>
+          <td>{{ item.companyAddress }}</td>
+          <td>{{ item.companyPhone }}</td>
+          <td>{{ item.companylogo }}</td>
+          <td>{{ item.latitude }}</td>
+          <td>{{ item.longitude }}</td>
+          <td>{{ item.sector }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

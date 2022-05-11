@@ -13,6 +13,7 @@ import { CustomersComponent } from './customers/customers.component';
 import { RegisterComponent } from './register/register.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
+import { CompaniesComponent } from './companies/companies.component';
 
 const routes: Routes = [
   {
@@ -26,13 +27,13 @@ const routes: Routes = [
       { path: 'orders', component: OrdersComponent },
       { path: 'customers', component: CustomersComponent },
       { path: 'content', component: ContentComponent },
+      { path: 'companies', component: CompaniesComponent },
     ],
   },
-  { path: "home", component: HomeComponent},
+  { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: "register", component: RegisterComponent},
-  { path: "**", component: NotFoundComponent},
-
+  { path: 'register', component: RegisterComponent },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({

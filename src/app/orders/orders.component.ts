@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { IOrder, OrderList } from '../models/iorder';
+import { SeoService } from '../services/seo.service';
 import { userFunction } from '../utils/user';
 @Component({
   selector: 'app-orders',
@@ -10,9 +11,14 @@ import { userFunction } from '../utils/user';
 })
 export class OrdersComponent implements OnInit {
   cartList: OrderList[] = [];
-  constructor(private httpService: HttpClient) {}
+  constructor(
+    private httpService: HttpClient,
+    private seoService: SeoService
+  ) {}
 
   ngOnInit(): void {
+    this.seoService.updateTitle('Etiya | Siparişlerim');
+
     const user = userFunction();
     if (user !== null) {
       const url = 'https://www.jsonbulut.com/json/orderList.php';

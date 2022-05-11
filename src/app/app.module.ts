@@ -24,6 +24,7 @@ import { ProductComponent } from './content/product/product.component';
 import { RegisterComponent } from './register/register.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
+import { CompaniesComponent } from './companies/companies.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { HomeComponent } from './home/home.component';
     RegisterComponent,
     NotFoundComponent,
     HomeComponent,
+    CompaniesComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { environment } from 'src/environments/environment';
 import { Bilgiler, IUser } from '../models/iuser';
+import { SeoService } from '../services/seo.service';
 import { decrypt } from '../utils/crypto';
 
 @Component({
@@ -25,7 +26,8 @@ export class ProfileComponent implements OnInit {
 
   constructor(
     private toastrService: ToastrService,
-    private httpService: HttpClient
+    private httpService: HttpClient,
+    private seoService: SeoService
   ) {
     const userInStorage = sessionStorage.getItem('user');
 
@@ -38,7 +40,9 @@ export class ProfileComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.seoService.updateTitle('Etiya | Profil');
+  }
 
   updateFunction() {
     if (this.user.userName === '') {

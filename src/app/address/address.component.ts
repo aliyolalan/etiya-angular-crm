@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
 import { NgxSmartModalService } from 'ngx-smart-modal';
 import { dateConvertFunction } from '../utils/date-convert';
 import { IUser, Bilgiler } from '../models/iuser';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-address',
@@ -35,10 +36,12 @@ export class AddressComponent implements OnInit {
   constructor(
     private toastrService: ToastrService,
     private httpService: HttpClient,
-    private ngxSmartModalService: NgxSmartModalService
+    private ngxSmartModalService: NgxSmartModalService,
+    private seoService: SeoService
   ) {}
 
   ngOnInit(): void {
+    this.seoService.updateTitle('Etiya | Adres Listesi');
     this.allAddressFunction();
   }
 

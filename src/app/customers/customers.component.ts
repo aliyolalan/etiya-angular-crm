@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-customers',
   templateUrl: './customers.component.html',
-  styleUrls: ['./customers.component.css']
+  styleUrls: ['./customers.component.css'],
 })
 export class CustomersComponent implements OnInit {
-
-  constructor() { }
+  constructor(private seoService: SeoService) {}
 
   ngOnInit(): void {
+    this.seoService.updateTitle('Etiya | Müşteri Listesi');
   }
-
 }
