@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ModalDialogModule } from 'ngx-modal-dialog';
+import { NgxMaskModule } from 'ngx-mask';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import { RegisterComponent } from './register/register.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 import { CompaniesComponent } from './companies/companies.component';
+import { TitleDirective } from './directives/title.directive';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { CompaniesComponent } from './companies/companies.component';
     NotFoundComponent,
     HomeComponent,
     CompaniesComponent,
+    TitleDirective,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +59,7 @@ import { CompaniesComponent } from './companies/companies.component';
     ToastrModule.forRoot(),
     NgxSmartModalModule.forRoot(),
     ModalDialogModule.forRoot(),
+    NgxMaskModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

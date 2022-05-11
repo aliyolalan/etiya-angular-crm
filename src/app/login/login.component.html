@@ -16,9 +16,12 @@
       method="post"
     >
       <div class="mb-3 inline-block">
-        <p class="mb-2 text-3xl text-white-900">Giriş Yapın</p>
+        <!-- <p class="mb-2 text-3xl text-white-900">Giriş Yapın</p> -->
+        <!-- Title Directive Example -->
+        <p [appTitle]="'Giriş Yapın'"></p>
         <div class="h-1 w-full bg-etiyaOrangeColor-1000"></div>
       </div>
+
       <div class="mb-3 flex flex-col">
         <label class="text-md mb-2 text-white-900" for="">Email</label>
         <input
@@ -35,6 +38,7 @@
           Lütfen bir email giriniz!
         </div>
       </div>
+
       <div class="mb-6 flex flex-col">
         <label class="text-md mb-2 text-white-900" for="">Parola</label>
         <input
@@ -51,7 +55,8 @@
           Lütfen şifrenizi giriniz!
         </div>
       </div>
-      <div class="flex items-center justify-between">
+
+      <div class="mb-3 flex items-center justify-between">
         <div class="flex items-center justify-center">
           <input
             class="mr-2 h-4 w-4 cursor-pointer rounded-none border-none"
@@ -71,6 +76,16 @@
             <span class="mr-2">Giriş Yap</span>
             <fa-icon [icon]="faSignIn"></fa-icon>
           </button>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between">
+        <div class="flex items-center justify-center">
+          <a
+            routerLink="/register"
+            class="cursor-pointer text-white-1000 underline"
+            >Hesabınız yok mu? Hemen kaydolun.</a
+          >
         </div>
       </div>
     </form>

@@ -17,7 +17,9 @@
       method="post"
     >
       <div class="mb-3 inline-block">
-        <p class="mb-2 text-3xl text-white-900">Kayıt Olun</p>
+        <!-- <p class="mb-2 text-3xl text-white-900">Kayıt Olun</p> -->
+        <!-- Title Directive Example -->
+        <p [appTitle]="'Kayıt Olun'"></p>
         <div class="h-1 w-full bg-etiyaOrangeColor-1000"></div>
       </div>
       <!-- User Name Section -->
@@ -59,6 +61,7 @@
         <label class="text-md mb-2 text-white-900" for="">Telefon</label>
         <input
           formControlName="userPhone"
+          [mask]="'(000)-000-0000'"
           class="mb-1 w-full rounded-none border-none border-etiyaNavyColor-400 bg-white-800 px-4 py-3 text-sm"
           type="text"
           id="phone"
@@ -107,7 +110,15 @@
       </div>
       <!-- User Register Button -->
       <div class="flex items-center justify-between">
-        <div class="flex items-center justify-center"></div>
+        <div class="flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <a
+              routerLink="/login"
+              class="text-md cursor-pointer text-white-1000 underline"
+              >Hesabınız var mı? Hemen giriş yapın.</a
+            >
+          </div>
+        </div>
         <div>
           <button
             type="submit"
