@@ -56,6 +56,7 @@ export class LoginComponent implements OnInit {
       password: new FormControl(this.userForm.value.password, [
         Validators.required,
       ]),
+      remember: new FormControl(this.userForm.value.remember, []),
     });
   }
 

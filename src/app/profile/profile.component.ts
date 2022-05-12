@@ -61,9 +61,9 @@ export class ProfileComponent implements OnInit {
         ref: environment.referanceNumber,
         userName: this.user.userName,
         userSurname: this.user.userSurname,
-        userEmail: this.user.userEmail,
+        userMail: this.user.userEmail,
         userPhone: this.user.userPhone,
-        userPassword: this.password,
+        userPass: this.password,
         userId: this.user.userId,
       };
 

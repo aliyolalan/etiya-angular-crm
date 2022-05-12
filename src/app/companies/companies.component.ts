@@ -7,7 +7,7 @@ import {
 import { HttpClient } from '@angular/common/http';
 import { userFunction } from '../utils/user';
 import { environment } from 'src/environments/environment';
-import { Company, CompanyBilgiler, ICompany } from '../models/icompany';
+import { CompanyBilgiler, ICompany } from '../models/icompany';
 import { ToastrService } from 'ngx-toastr';
 import { SeoService } from '../services/seo.service';
 
@@ -19,7 +19,6 @@ import { SeoService } from '../services/seo.service';
 })
 export class CompaniesComponent implements OnInit {
   arrayOfCompanyInfo: CompanyBilgiler[] = [];
-  oldArrayOfCompanyInfo: CompanyBilgiler[] = [];
   companyItem: CompanyBilgiler = {};
 
   constructor(
@@ -46,25 +45,17 @@ export class CompaniesComponent implements OnInit {
       const newThis = this;
       this.httpService.get<ICompany>(URL, { params: sendParams }).subscribe({
         next(res) {
-          const resCompany = res.Company[0];
-          const resStatus = resCompany.durum;
-          const resMessage = resCompany.mesaj;
-
           const companyInformation = res.Company[0].bilgiler;
 
-          if (companyInformation && resStatus) {
+          if (companyInformation) {
             newThis.arrayOfCompanyInfo = companyInformation;
-            newThis.oldArrayOfCompanyInfo = companyInformation;
-            console.log(companyInformation);
-          } else {
-            console.log('Çalışmadı', resMessage);
+            console.log(newThis.arrayOfCompanyInfo);
           }
         },
         error(err) {
-          console.log(err.message);
+          console.error(err.message);
         },
       });
-    } else {
     }
   }
 }
