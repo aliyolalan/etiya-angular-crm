@@ -7,7 +7,7 @@ import { userFunction } from '../utils/user';
 import { environment } from 'src/environments/environment';
 import { NgxSmartModalService } from 'ngx-smart-modal';
 import { dateConvertFunction } from '../utils/date-convert';
-import { IUser, Bilgiler } from '../models/iuser';
+import { IUser } from '../models/iuser';
 import { SeoService } from '../services/seo.service';
 
 @Component({
@@ -16,20 +16,10 @@ import { SeoService } from '../services/seo.service';
   styleUrls: ['./address.component.css'],
 })
 export class AddressComponent implements OnInit {
-  user: Bilgiler = {
-    userId: '',
-    userName: '',
-    userSurname: '',
-    userEmail: '',
-    userPhone: '',
-    face: '',
-    faceID: '',
-  };
-
   faDeleteLeft = faDeleteLeft;
   faTrash = faTrash;
 
-  addressList: AddressList = {};
+  addres: AddressList = {};
   allAddress: AddressList[] = [];
   modelAddress: AddressList = {};
 
@@ -45,6 +35,7 @@ export class AddressComponent implements OnInit {
     this.allAddressFunction();
   }
 
+  // Adres Listeleme Fonksiyonu
   allAddressFunction() {
     const userInfo = userFunction();
 
@@ -66,50 +57,42 @@ export class AddressComponent implements OnInit {
     }
   }
 
+  // Adres Ekleme Fonksiyonu
   addressAddFunction() {
     const userInfo = userFunction();
 
     if (userInfo !== null) {
-      this.addressList.musterilerID = userInfo.userId;
+      this.addres.musterilerID = userInfo.userId;
 
-      if (this.addressList.il === undefined || this.addressList.il === '') {
+      if (this.addres.il === undefined || this.addres.il === '') {
         this.toastrService.error('City can not be null!');
-      } else if (
-        this.addressList.ilce === undefined ||
-        this.addressList.ilce === ''
-      ) {
+      } else if (this.addres.ilce === undefined || this.addres.ilce === '') {
         this.toastrService.error('Distinct can not be null!');
       } else if (
-        this.addressList.Mahalle === undefined ||
-        this.addressList.Mahalle === ''
+        this.addres.Mahalle === undefined ||
+        this.addres.Mahalle === ''
       ) {
         this.toastrService.error('Neighborhood can not be null!');
-      } else if (
-        this.addressList.adres === undefined ||
-        this.addressList.adres === ''
-      ) {
+      } else if (this.addres.adres === undefined || this.addres.adres === '') {
         this.toastrService.error('Address can not be null!');
       } else if (
-        this.addressList.kapiNo === undefined ||
-        this.addressList.kapiNo === ''
+        this.addres.kapiNo === undefined ||
+        this.addres.kapiNo === ''
       ) {
         this.toastrService.error('No can not be null!');
-      } else if (
-        this.addressList.not === undefined ||
-        this.addressList.not === ''
-      ) {
+      } else if (this.addres.not === undefined || this.addres.not === '') {
         this.toastrService.error('Note can not be null!');
       } else {
         const url = 'https://www.jsonbulut.com/json/addressAdd.php';
         const sendParams = {
           ref: environment.referanceNumber,
-          musterilerID: this.addressList.musterilerID,
-          il: this.addressList.il,
-          ilce: this.addressList.ilce,
-          mahalle: this.addressList.Mahalle,
-          adres: this.addressList.adres,
-          kapiNo: this.addressList.kapiNo,
-          notBilgisi: this.addressList.not,
+          musterilerID: this.addres.musterilerID,
+          il: this.addres.il,
+          ilce: this.addres.ilce,
+          Mahalle: this.addres.Mahalle,
+          adres: this.addres.adres,
+          kapiNo: this.addres.kapiNo,
+          notBilgi: this.addres.not,
         };
 
         const newThis = this;
@@ -119,11 +102,11 @@ export class AddressComponent implements OnInit {
             const userStatus = user.durum;
             const userMessage = user.mesaj;
 
-            if (userStatus === true) {
-              newThis.allAddressFunction();
-              newThis.toastrService.success('Kayıt işlemi başarılı.');
-            } else {
+            if (userStatus === false) {
               newThis.toastrService.error(userMessage);
+            } else {
+              newThis.allAddressFunction();
+              newThis.toastrService.success('Adres Kaydedildi.');
             }
           },
           error(err) {
@@ -134,6 +117,7 @@ export class AddressComponent implements OnInit {
     }
   }
 
+  // Adres Silme Fonksiyonu
   removeAddressFunction(adresID: string) {
     const answer = confirm('Are you sure?');
 

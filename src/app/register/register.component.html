@@ -78,14 +78,14 @@
       <div class="mb-3 flex flex-col">
         <label class="text-md mb-2 text-white-900" for="">Email</label>
         <input
-          formControlName="userEmail"
+          formControlName="userMail"
           class="mb-1 w-full rounded-none border-none border-etiyaNavyColor-400 bg-white-800 px-4 py-3 text-sm"
           type="email"
           id="email"
           name="email"
         />
         <div
-          *ngIf="userEmail?.invalid && userEmail?.touched"
+          *ngIf="userMail?.invalid && userMail?.touched"
           class="text-etiyaOrangeColor-1000"
         >
           Lütfen bir email giriniz!

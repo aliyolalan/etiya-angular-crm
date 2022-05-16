@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit {
     userName: '',
     userSurname: '',
     userPhone: '',
-    userEmail: '',
+    userMail: '',
     userPassword: '',
   });
 
@@ -52,7 +52,7 @@ export class RegisterComponent implements OnInit {
       userPhone: new FormControl(this.userForm.value.userPhone, [
         Validators.required,
       ]),
-      userEmail: new FormControl(this.userForm.value.userEmail, [
+      userMail: new FormControl(this.userForm.value.userMail, [
         Validators.required,
         Validators.email,
       ]),
@@ -75,8 +75,8 @@ export class RegisterComponent implements OnInit {
     return this.userForm.get('userPhone');
   }
 
-  get userEmail() {
-    return this.userForm.get('userEmail');
+  get userMail() {
+    return this.userForm.get('userMail');
   }
 
   get userPassword() {
@@ -88,8 +88,8 @@ export class RegisterComponent implements OnInit {
     const userName = this.userName?.value;
     const userSurname = this.userSurname?.value;
     const userPhone = this.userPhone?.value;
-    const userEmail = this.userEmail?.value;
-    const userPassword = this.userPassword?.value;
+    const userMail = this.userMail?.value;
+    const userPass = this.userPassword?.value;
 
     const URL = 'https://www.jsonbulut.com/json/userRegister.php';
     const sendParams = {
@@ -97,8 +97,8 @@ export class RegisterComponent implements OnInit {
       userName: userName,
       userSurname: userSurname,
       userPhone: userPhone,
-      userEmail: userEmail,
-      userPassword: userPassword,
+      userMail: userMail,
+      userPass: userPass,
     };
 
     // Sending Personal Information To Backend
@@ -116,7 +116,7 @@ export class RegisterComponent implements OnInit {
           // Redirect to Login Page After Registration
           setTimeout(() => {
             newThis.routerService.navigate(['/login']);
-          }, 2000);
+          }, 1000);
         } else {
           newThis.toastrService.clear();
           newThis.toastrService.error(resMessage, 'Hata', {
