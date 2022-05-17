@@ -5,17 +5,19 @@ table {
   width: 100%;
 }
 
-td, th {
-  border: 1px solid rgba(36,36,65,0.2);
+td,
+th {
+  border: 1px solid rgba(36, 36, 65, 0.2);
   text-align: left;
   padding: 8px;
 }
 
 tr {
   transition: all 100ms;
+  cursor: pointer;
 }
 
 tr:nth-child(even):hover,
-tr:nth-child(odd):hover  {
-  background-color: rgba(36,36,65,0.1);
+tr:nth-child(odd):hover {
+  background-color: rgba(36, 36, 65, 0.1);
 }

@@ -20,6 +20,7 @@ export class OrdersComponent implements OnInit {
     this.seoService.updateTitle('Etiya | Siparişlerim');
 
     const user = userFunction();
+
     if (user !== null) {
       const url = 'https://www.jsonbulut.com/json/orderList.php';
       const sendParams = {

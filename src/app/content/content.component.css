@@ -5,8 +5,9 @@ table {
   width: 100%;
 }
 
-td, th {
-  border: 1px solid rgba(36,36,65,0.2);
+td,
+th {
+  border: 1px solid rgba(36, 36, 65, 0.2);
   text-align: left;
   padding: 8px;
 }
@@ -17,8 +18,8 @@ tr {
 }
 
 tr:nth-child(even):hover,
-tr:nth-child(odd):hover  {
-  background-color: rgba(36,36,65,0.1);
+tr:nth-child(odd):hover {
+  background-color: rgba(36, 36, 65, 0.1);
 }
 
 /* Modal Styling */
@@ -26,4 +27,10 @@ tr:nth-child(odd):hover  {
   background-color: rgba(255, 255, 255, 1);
   max-height: 800px;
   overflow: auto;
+}
+
+.nsm-dialog-btn-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }

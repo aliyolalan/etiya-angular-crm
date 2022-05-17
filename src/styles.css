@@ -18,9 +18,9 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgba(36,36,65,1.0);
+  background: rgba(36, 36, 65, 1);
 }
 
 body {
-  background-color: whitesmoke
+  background-color: whitesmoke;
 }

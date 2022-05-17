@@ -105,8 +105,8 @@ export class AddressComponent implements OnInit {
             if (userStatus === false) {
               newThis.toastrService.error(userMessage);
             } else {
-              newThis.allAddressFunction();
               newThis.toastrService.success('Adres Kaydedildi.');
+              newThis.allAddressFunction();
             }
           },
           error(err) {
@@ -119,7 +119,9 @@ export class AddressComponent implements OnInit {
 
   // Adres Silme Fonksiyonu
   removeAddressFunction(adresID: string) {
-    const answer = confirm('Are you sure?');
+    const answer = confirm(
+      'Adres bilgilerini silmek istediğinizden emin misiniz?'
+    );
 
     if (answer) {
       const userInfo = userFunction();

@@ -3,6 +3,10 @@ import { IProduct, ProBilgiler } from '../models/iproduct';
 import { RestService } from '../services/rest.service';
 import { NgxSmartModalService } from 'ngx-smart-modal';
 import { SeoService } from '../services/seo.service';
+import { userFunction } from '../utils/user';
+import { environment } from 'src/environments/environment';
+import { HttpClient } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-content',
@@ -22,7 +26,9 @@ export class ContentComponent implements OnInit {
   constructor(
     private restService: RestService,
     public ngxSmartModalService: NgxSmartModalService,
-    private seoService: SeoService
+    private seoService: SeoService,
+    private httpService: HttpClient,
+    private toastrService: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -71,5 +77,37 @@ export class ContentComponent implements OnInit {
 
   openDetailModal(i: number) {
     this.productItem = this.arrayOfProductInfo[i];
+  }
+
+  // Add To Cart Function
+  addToCart(productId: string) {
+    const user = userFunction();
+
+    if (user !== null) {
+      const URL = 'https://jsonbulut.com/json/orderForm.php';
+      const sendParams = {
+        ref: environment.referanceNumber,
+        customerId: user.userId,
+        productId: productId,
+        html: productId,
+      };
+
+      const newThis = this;
+
+      this.httpService.get<any>(URL, { params: sendParams }).subscribe({
+        next(res) {
+          const status = res.order[0].durum;
+          const message = res.order[0].mesaj;
+
+          if (status === true) {
+            newThis.toastrService.success(message);
+            newThis.ngxSmartModalService.getModal('myModal').close();
+          }
+        },
+        error(err) {
+          console.log(err.message);
+        },
+      });
+    }
   }
 }
